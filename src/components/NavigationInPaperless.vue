@@ -1,5 +1,5 @@
 <template>
     <div>
-        MyDataSets
+        NAVIGATION
     </div>
 </template>
