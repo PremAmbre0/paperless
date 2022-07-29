@@ -1,5 +1,3 @@
 <template>
-    <div>
-        MyDataSets
-    </div>
+  <div>MyDataSets</div>
 </template>

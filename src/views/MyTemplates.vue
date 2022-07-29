@@ -1,5 +1,3 @@
 <template>
-    <div>
-        MY TEMPLATES
-    </div>
+  <div>MY TEMPLATES</div>
 </template>
