@@ -4,6 +4,7 @@ module.exports = {
       scss: {
         additionalData: `
           @import "@/scss/main.scss";
+          @import "@/scss/colors.scss";
         `
       }
     }
