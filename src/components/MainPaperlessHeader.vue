@@ -1,42 +1,50 @@
 <template>
   <header class="header">
-    <div class="header-logo">
-      <span class="header-logo-text"> Paperless </span>
-    </div>
+    <span class="header-logo"> Paperless </span>
     <div class="header-profile">
       <div class="header-profile-settings">
-        <v-icon icon="settings"></v-icon>
+        <v-icon> settings</v-icon>
       </div>
-      <div class="header-profile-image">
-        <img src="https://picsum.photos/200" alt="profile image" />
-      </div>
+      <img class="header-profile-image" src="https://picsum.photos/200" alt="profile image" />
     </div>
   </header>
 </template>
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap");
-.header{
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 0 1.5rem 0 1.5rem;
+  top: 0;
+  height: 10vh;
+  width: 100%;
+  background-color: $primary;
+
+  &-logo {
+    font-family: "Dancing Script", cursive;
+    color: $white;
+    font-size: 2rem;
+  }
+
+  &-profile {
     display: flex;
-    justify-content: space-between;
-    position:fixed;
-    top:0;
-    height: 10vh;
-    width: 100%;
-    background-color: $primary;
-    &-logo{
-        &-text{
-              font-family: "Dancing Script", cursive;
-        }
+    height: 100%;
+    width: 8rem;
+    align-items: center;
+    justify-content: space-around;
+    &-image {
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50%;
+      overflow: hidden;
     }
-    &-profile{
-        &-settings{
-
-        }
-        &-image{
-
-        }
-    }
-
+  }
+  .v-icon{
+    font-size:2.2rem;
+  }
 }
 </style>
