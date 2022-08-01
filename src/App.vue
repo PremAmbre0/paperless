@@ -1,7 +1,9 @@
 <template>
-  <div id="app">
+  <div>
     <MainPaperlessHeader />
-    <!-- <router-view /> -->
+    <div id="app">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -15,11 +17,13 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 #app {
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
   min-height: 100vh;
+  max-width: 192rem;
+  margin: 10vh auto 0 auto;
+  background-color: $light-five;
 }
 </style>

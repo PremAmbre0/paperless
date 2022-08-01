@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavigationInPaperless />
-    <router-view></router-view>
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 
