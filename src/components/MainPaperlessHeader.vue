@@ -23,6 +23,7 @@
   height: 10vh;
   width: 100%;
   background-color: $primary;
+  z-index: 100;
   &-logo {
     font-family: "Dancing Script", cursive;
     color: $white;

@@ -37,9 +37,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: $light-four;
-  padding: 0 8% 0 8%;
+  background-color:$light-four;
+  padding: 0 5% 0 5%;
   color: $shade-four;
+  z-index: 1000;
 }
 
 .dropdown {
