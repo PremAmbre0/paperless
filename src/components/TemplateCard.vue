@@ -2,7 +2,6 @@
     <div class="card">
         <div class="card-image" :style="{backgroundImage:`url(${imageUrl})`}">
         </div>
-        <div class="card-lastupdate">Last Update on : {{lastUpdate}}</div>
         <div class="card-details">
             <div class="card-deatails-tempname">{{templateName}}</div>
             <div class="card-details-edit">x</div>
@@ -34,19 +33,11 @@ export default{
         width:100%;
         height:12rem;
         position: relative;
-        background-color: $light-three;
         border-radius: 0.5rem;
         color: $shade-four;
-        &-lastupdate{
-            position: absolute;
-            top:0;
-            right:0;
-            width: 100%;
-            text-align:right;
-            background-color: rgba($tint-two,0.4);
-            padding: 0 0.5rem 0 0.5rem;
-            font-size: 0.8rem;
-        }
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: 0.5rem 0.5rem 1rem rgba($black,0.3);
         &-image{
             position: absolute;
             top:0;
@@ -62,10 +53,10 @@ export default{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 25%;
+            height: 30%;
             width: 100%;
             padding: 0 0.5rem 0 0.5rem;
-            background-color: rgba($primary,0.4);
+            background-color:$tint-two;
             &-tempname{
             }               
             &-edit{

@@ -20,7 +20,7 @@
   position: fixed;
   padding: 0 1.5rem 0 1.5rem;
   top: 0;
-  height: 10vh;
+  height: 6vh;
   width: 100%;
   background-color: $primary;
   z-index: 100;

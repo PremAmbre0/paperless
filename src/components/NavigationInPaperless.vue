@@ -1,12 +1,11 @@
 <template>
   <div class="sub-header">
     <div class="dropdown">
-      <ul class="sections-list">
-        <li class="sections-list-item drop-animation" v-for="section in sections" :key="sections.indexOf(section)">{{
-            section == selectedSection ? '' : section
-        }}</li>
-      </ul>
-      <div class="dropdown-btn">{{ selectedSection }}</div>
+      <div class="dropdown-btn" @click="showSections = !showSections">{{ selectedSection }}</div>
+      <div v-if="showSections" class="sections-list">
+        <router-link :to="section.trim()" class="sections-list-items" v-for="section in sectionsToShow" :key="sections.indexOf(section)">{{ section }}
+        </router-link>
+      </div>
     </div>
     <div class="searchbar">
       <input type="text" class="searchbar-input" placeholder="Search">
@@ -19,10 +18,16 @@
 export default {
   data() {
     return {
+      showSections: false,
       selectedSection: "My Templates",
       sections: ["My Templates", "My Datasets", "My Jobs", "Dashboard"]
     }
   },
+  computed: {
+    sectionsToShow() {
+      return this.sections.filter((section) => section != this.selectedSection)
+    }
+  }
 }
 
 </script>
@@ -30,14 +35,14 @@ export default {
 <style scoped lang="scss">
 .sub-header {
   position: fixed;
-  top: 10vh;
+  top: 6vh;
   left: 0;
   width: 100vw;
-  min-height: 8vh;
+  min-height: 5vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color:$light-four;
+  background-color: $light-four;
   padding: 0 5% 0 5%;
   color: $shade-four;
   z-index: 1000;
@@ -46,45 +51,36 @@ export default {
 .dropdown {
   position: relative;
 
+
   &-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4.5vh;
-    width: 20vw;
-    background-color: rgba($tint-five, 0.55);
+    min-height: 3vh;
+    width: 30vw;
+    background-color: $tint-four;
     border-radius: 0.4rem;
   }
 }
 
 .sections-list {
-  display: flex;
   position: absolute;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  :first-child {
-    visibility: hidden;
-  }
-
+  top: 2.7vh;
+  animation: dropdown 0.3s;
+  
   :last-child {
     border-radius: 0 0 0.4rem 0.4rem;
   }
 
-  &-item {
-    height: 4.5vh;
-    width: 15vw;
-    text-align: center;
-    background-color: rgba($tint-five, 0.3);
-  }
-}
-.drop-animation{
-  &:hover {
-    animation: dropdown 1s;
+  &-items , &-items:active{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 3vh;
+    width: 30vw;
+    background-color: $tint-five;
+    color: $shade-four;
   }
 }
 
@@ -92,19 +88,16 @@ export default {
   &-input {}
 }
 
-.space {
-  width: cal;
-}
-
-@keyframes dropdown {
+@keyframes dropdown{
   from {
     opacity: 0;
-    transform: translateY(-0.5rem);
+    transform: translateY(-1rem);
   }
 
   to {
     opacity: 1;
-    transform: translate(0);
+    transform:translateY(0);
   }
 }
+
 </style>
