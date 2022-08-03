@@ -1,6 +1,7 @@
 <template>
   <div>
     <MainPaperlessHeader />
+    <NavigationInPaperless />
     <div id="app">
       <router-view />
     </div>
@@ -10,10 +11,12 @@
 <script>
 // importiong components
 import MainPaperlessHeader from "./components/MainPaperlessHeader.vue";
+import NavigationInPaperless from "./components/NavigationInPaperless.vue";
 
 export default {
   components: {
-    MainPaperlessHeader
+    MainPaperlessHeader,
+    NavigationInPaperless
   }
 }
 </script>
