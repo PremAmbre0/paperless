@@ -45,10 +45,11 @@ export default {
 
 .templatepreview {
     position: fixed;
-    top: 10%;
+    top: 15%;
     left:50%;
     transform: translateX(-50%);
     max-width: 80vw;
+    height: 80vw;
     object-fit: cover;
 }
 </style>

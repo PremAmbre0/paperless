@@ -3,12 +3,13 @@
     <div class="dropdown">
       <div class="dropdown-btn" @click="showSections = !showSections">{{ selectedSection }}</div>
       <div v-if="showSections" class="sections-list">
-        <router-link :to="section.trim()" class="sections-list-items" v-for="section in sectionsToShow" :key="sections.indexOf(section)">{{ section }}
+        <router-link :to="section.trim()" class="sections-list-items" v-for="section in sectionsToShow" :key="sections.indexOf(section)" @click.native="showSections = false , dropdownButtonText(section)">{{ section }}
         </router-link>
       </div>
     </div>
     <div class="searchbar">
-      <input type="text" class="searchbar-input" placeholder="Search">
+      <input type="text" class="searchbar-input" placeholder="Search"><v-icon>mdi-magnify
+      </v-icon>
     </div>
   </div>
 </template>
@@ -26,6 +27,11 @@ export default {
   computed: {
     sectionsToShow() {
       return this.sections.filter((section) => section != this.selectedSection)
+    }
+  },
+  methods:{
+    dropdownButtonText(section){
+      this.selectedSection = section
     }
   }
 }
@@ -85,7 +91,29 @@ export default {
 }
 
 .searchbar {
-  &-input {}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-input {
+    height: 2rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: $light-five;
+    border-radius: 0.4rem;
+    ::placeholder{
+      color: $shade-four; ;
+      background-color: $light-four;
+    }
+  }
+}
+
+.v-icon{
+  height: 2rem;
+  width: 3rem;
+  background-color:$light-two;
+  font-size: 1.7rem;
+  border-radius: 0.4rem;
 }
 
 @keyframes dropdown{

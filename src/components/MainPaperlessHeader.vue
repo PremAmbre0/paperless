@@ -3,7 +3,7 @@
     <span class="header-logo"> Paperless </span>
     <div class="header-profile">
       <div class="header-profile-settings">
-        <v-icon> settings</v-icon>
+        <v-icon>settings</v-icon>
       </div>
       <img class="header-profile-image" src="https://picsum.photos/200" alt="profile image" />
     </div>
