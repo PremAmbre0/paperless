@@ -2,8 +2,9 @@
   <div class="sub-header">
     <div class="dropdown">
       <div class="dropdown-btn" @click="showSections = !showSections">{{ selectedSection }}</div>
-      <div v-if="showSections" class="sections-list" >
-        <router-link :to="section.value" class="sections-list-items" v-for="section in sectionsToShow" :key="sections.indexOf(section)" @click.native="showSections = false , dropdownButtonText(section)">{{section.text}}
+      <div v-if="showSections" class="sections-list">
+        <router-link :to="section.value" class="sections-list-items" v-for="section in sectionsToShow" :key="sections.indexOf(section)" @click.native="showSections = false , dropdownButtonText(section)">{{ section.text }}
+
         </router-link>
       </div>
     </div>
@@ -22,7 +23,6 @@ export default {
     return {
       showSections: false,
       selectedSection: "My Templates",
-      // sections: ["My Templates", "My Datasets", "My Jobs", "Dashboard"]
       sections:[{
         text:"My Templates",
         value:"my-templates"
