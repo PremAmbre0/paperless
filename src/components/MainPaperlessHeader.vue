@@ -3,7 +3,7 @@
     <span class="header-logo"> Paperless </span>
     <div class="header-profile">
       <div class="header-profile-settings">
-        <v-icon>settings</v-icon>
+        <span class="fa-solid fa-gear setting-icon"></span> 
       </div>
       <img class="header-profile-image" src="https://picsum.photos/200" alt="profile image" />
     </div>
@@ -43,7 +43,7 @@
       overflow: hidden;
     }
   }
-  .v-icon{
+  .setting-icon{
     font-size:2.2rem;
   }
 }

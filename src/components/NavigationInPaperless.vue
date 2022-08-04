@@ -2,14 +2,15 @@
   <div class="sub-header">
     <div class="dropdown">
       <div class="dropdown-btn" @click="showSections = !showSections">{{ selectedSection }}</div>
-      <div v-if="showSections" class="sections-list">
-        <router-link :to="section.trim()" class="sections-list-items" v-for="section in sectionsToShow" :key="sections.indexOf(section)" @click.native="showSections = false , dropdownButtonText(section)">{{ section }}
+      <div v-if="showSections" class="sections-list" >
+        <router-link :to="section" class="sections-list-items" v-for="section in sectionsToShow" :key="sections.indexOf(section)" @click.native="showSections = false , dropdownButtonText(section)">{{section}}
         </router-link>
       </div>
     </div>
     <div class="searchbar">
-      <input type="text" class="searchbar-input" placeholder="Search"><v-icon>mdi-magnify
-      </v-icon>
+      <input type="text" class="searchbar-input" placeholder="Search">
+      <!-- <v-icon>mdi-magnify
+      </v-icon> -->
     </div>
   </div>
 </template>
@@ -21,13 +22,33 @@ export default {
     return {
       showSections: false,
       selectedSection: "My Templates",
-      sections: ["My Templates", "My Datasets", "My Jobs", "Dashboard"]
+      // sections: ["My Templates", "My Datasets", "My Jobs", "Dashboard"]
+      sections:[{
+        text:"My Templates",
+        value:"my-templates"
+      },
+      {
+        text:"My Datasets",
+        value:"my-datasets"
+      },
+      {
+        text:"My Jobs",
+        value:"my-jobs"
+      },
+      {
+        text:"Dashboard",
+        value:"dasboard"
+      }
+      ]
     }
   },
   computed: {
     sectionsToShow() {
       return this.sections.filter((section) => section != this.selectedSection)
     }
+  },
+  mounted(){
+    console.log(this.selectedSection.trim())
   },
   methods:{
     dropdownButtonText(section){

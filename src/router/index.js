@@ -12,9 +12,9 @@ const routes = [
   { path: "/", redirect: "/paperless/MyTemplates" },
   { path: "/auth", component: Authentication },
   { path: "/paperless/DashBoard", component: DashBoard },
-  { path: "/paperless/MyTemplates", component: MyTemplates },
-  { path: "/paperless/MyDataSets", component: MyDataSets },
-  { path: "/paperless/MyJobs", component: MyJobs },
+  { path: "/paperless/my-templates", component: MyTemplates },
+  { path: "/paperless/My DataSets", component: MyDataSets },
+  { path: "/paperless/My Jobs", component: MyJobs },
 ];
 
 const router = new VueRouter({
