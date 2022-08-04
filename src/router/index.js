@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Authentication from "../views/Authentication.vue";
-import DashBoard from "../views/DashBoard.vue";
-import MyDataSets from "../views/MyDataSets.vue";
+import DashBoard from "../views/Dashboard.vue";
+import MyDataSets from "../views/MyDatasets.vue";
 import MyJobs from "../views/MyJobs.vue";
 import MyTemplates from "../views/MyTemplates.vue";
 
