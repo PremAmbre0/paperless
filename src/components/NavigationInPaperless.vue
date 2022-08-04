@@ -3,7 +3,7 @@
     <div class="dropdown">
       <div class="dropdown-btn" @click="showSections = !showSections">{{ selectedSection }}</div>
       <div v-if="showSections" class="sections-list" >
-        <router-link :to="section" class="sections-list-items" v-for="section in sectionsToShow" :key="sections.indexOf(section)" @click.native="showSections = false , dropdownButtonText(section)">{{section}}
+        <router-link :to="section.value" class="sections-list-items" v-for="section in sectionsToShow" :key="sections.indexOf(section)" @click.native="showSections = false , dropdownButtonText(section)">{{section.text}}
         </router-link>
       </div>
     </div>
@@ -52,7 +52,7 @@ export default {
   },
   methods:{
     dropdownButtonText(section){
-      this.selectedSection = section
+      this.selectedSection = section.text
     }
   }
 }
