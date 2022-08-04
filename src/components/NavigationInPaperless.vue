@@ -8,8 +8,9 @@
       </div>
     </div>
     <div class="searchbar">
-      <input type="text" class="searchbar-input" placeholder="Search"><v-icon>mdi-magnify
-      </v-icon>
+      <input type="text" class="searchbar-input" placeholder="Search">
+      <!-- <v-icon>mdi-magnify
+      </v-icon> -->
     </div>
   </div>
 </template>
@@ -44,6 +45,9 @@ export default {
     sectionsToShow() {
       return this.sections.filter((section) => section != this.selectedSection)
     }
+  },
+  mounted(){
+    console.log(this.selectedSection.trim())
   },
   methods:{
     dropdownButtonText(section){
