@@ -3,12 +3,22 @@
     <span class="header-logo"> Paperless </span>
     <div class="header-profile">
       <div class="header-profile-settings">
-        <span class="fa-solid fa-gear setting-icon"></span> 
+        <!-- <span class="fa-solid fa-gear setting-icon"></span>  -->
+        <v-icon>mdi-cog</v-icon>
       </div>
       <img class="header-profile-image" src="https://picsum.photos/200" alt="profile image" />
     </div>
   </header>
 </template>
+
+<script>
+// import { VIcon } from 'vuetify/lib'
+export default {
+  components: {
+    // VIcon
+  }
+}
+</script>
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap");
