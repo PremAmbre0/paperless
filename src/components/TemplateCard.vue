@@ -65,4 +65,42 @@ export default{
             }
         }
     }
+
+    @media(min-width:440px){
+        .card{
+            height:14rem;
+            font-size: 1.4rem;
+        }
+    }
+       @media(min-width:500px){
+        .card{
+            height:15rem;
+            font-size: 1.6rem;
+        }
+    }
+       @media(min-width:1080px){
+        .card{
+            height:17rem;
+            &-details{
+                padding: 0 1rem 0 1rem;
+            }
+        }
+    }
+
+    @media(min-width:1440px){
+        .card{
+            height:20rem;
+            &-details{
+                padding: 0 1.5rem 0 1.5rem;
+            }
+        }
+    }
+     @media(min-width:1440px){
+        .card{
+            height:22rem;
+            &-details{
+                padding: 0 2rem 0 2rem;
+            }
+        }
+    }
 </style>

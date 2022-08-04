@@ -103,4 +103,29 @@ export default {
     font-size: 3rem;
   }
 }
+
+@media(min-width:600px){
+  .template-container {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+}
+
+@media(min-width:880px){
+  .template-container {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media(min-width:1440px){
+  .template-container {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  grid-template-columns: repeat(5, 1fr);
+}
+}
+
+}
 </style>
